@@ -162,7 +162,7 @@ function reviewable_lgtm() {
           review.pullRequest.assignees :
           review.pullRequest.requestedReviewers;
     const required = _.map(designatedReviewers, 'username');
-    let numApprovalsRequired;
+    let numApprovalsRequired = DEFAULT_NUM_APPROVALS_REQUIRED;
     if (required.length) {
         numApprovalsRequired =
             _.max([required.length, DEFAULT_NUM_APPROVALS_REQUIRED]);
